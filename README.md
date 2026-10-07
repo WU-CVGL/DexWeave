@@ -24,6 +24,7 @@
 <p align="center">
   <a href="https://dexweave.github.io/"><img src="https://img.shields.io/badge/Project-Page-2F80ED?style=flat" alt="Project Page" height="20"></a>
   <a href="https://arxiv.org/abs/2609.34724"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=flat&amp;logo=arxiv&amp;logoColor=white" alt="Paper (arXiv)" height="20"></a>
+  <a href="https://www.youtube.com/watch?v=Rr2A_dAr8AQ"><img src="https://img.shields.io/badge/Demo-Video-FF0000?style=flat&amp;logo=youtube&amp;logoColor=white" alt="Demo Video" height="20"></a>
 </p>
 
 ![DexWeave enables dexterous humanoid whole-body motion and interaction with everyday objects.](assets/teaser.webp)
