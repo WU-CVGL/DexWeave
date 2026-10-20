@@ -1,0 +1,7 @@
+data/
+/resources/objects/
+evaluatioin*/
+*.rrd
+__pycache__/
+*.py[cod]
+.cache/

@@ -1,0 +1,14 @@
+name: humoto-grab-viewer
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.14
+  - numpy=2.2.6
+  - scipy=1.15.2
+  - pinocchio=3.9.0
+  - coal=3.0.2
+  - pip
+  - pip:
+      - mujoco==3.12.0
+      - trimesh==4.11.3
+      - rerun-sdk==0.30.1
