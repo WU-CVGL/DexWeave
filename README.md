@@ -40,6 +40,11 @@ https://github.com/user-attachments/assets/8d1ddfe6-b401-4263-ac8c-0c2712ae731d
 - **2026-10-20:** Released the [HUMOTO and GRAB retargeted references](https://huggingface.co/datasets/naichuan04/DexWeave): 735 and 1,335 sequences, respectively, with matching evaluation NPZ files.
 - **2026-09-30:** Released the [project website](https://dexweave.github.io/), [paper](https://arxiv.org/abs/2609.34724), and this repository.
 
+## ⚒️ TODO
+
+- [ ] Release code
+- [x] Release paper
+
 ## Installation
 
 Create the environment, then run all commands from the repository root.
@@ -226,6 +231,4 @@ If you find this useful, please consider citing:
 
 ## Acknowledgement
 
-Built on [BeyondMimic](https://github.com/HybridRobotics/whole_body_tracking), [DeepMimic](https://github.com/xbpeng/DeepMimic), [OmniRetarget](https://github.com/amazon-far/holosoma) and [GMR](https://github.com/YanjieZe/GMR).
-
-Please also cite the datasets used: [HUMOTO](https://adobe-research.github.io/humoto/), [GRAB](https://grab.is.tue.mpg.de/), and [ContactDB](https://contactdb.cc.gatech.edu/) for the GRAB object meshes.
+Please also cite the datasets used: [HUMOTO](https://adobe-research.github.io/humoto/), [GRAB](https://grab.is.tue.mpg.de/), and [ContactDB](https://contactdb.cc.gatech.edu/) for the GRAB object meshes. We thank the authors of [BeyondMimic](https://github.com/HybridRobotics/whole_body_tracking), [DeepMimic](https://github.com/xbpeng/DeepMimic), [OmniRetarget](https://github.com/amazon-far/holosoma), and [GMR](https://github.com/YanjieZe/GMR) for their open-source contributions.
