@@ -27,7 +27,7 @@
   <a href="https://huggingface.co/datasets/naichuan04/DexWeave"><img src="https://img.shields.io/badge/Dataset-Hugging_Face-FFD21E?style=flat&amp;logo=huggingface&amp;logoColor=black" alt="Dataset (Hugging Face)" height="20"></a>
 </p>
 
-https://github.com/user-attachments/assets/0b0d7ae9-a3de-4daf-8aad-cba62337e353
+https://github.com/user-attachments/assets/8d1ddfe6-b401-4263-ac8c-0c2712ae731d
 
 <p align="center">
   <img src="assets/teaser.webp" width="100%" alt="DexWeave enables dexterous humanoid whole-body motion and interaction with everyday objects.">
