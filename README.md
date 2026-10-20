@@ -35,7 +35,7 @@ https://github.com/user-attachments/assets/8d1ddfe6-b401-4263-ac8c-0c2712ae731d
 
 **TL;DR:** DexWeave combines interaction-consistent motion retargeting with anatomy-aware reinforcement learning to enable dexterous humanoid loco-manipulation from human demonstrations.
 
-## News
+## 🔥🔥🔥 News
 
 - **2026-10-20:** Released the [HUMOTO and GRAB retargeted references](https://huggingface.co/datasets/naichuan04/DexWeave): 735 and 1,335 sequences, respectively, with matching evaluation NPZ files.
 - **2026-09-30:** Released the [project website](https://dexweave.github.io/), [paper](https://arxiv.org/abs/2609.34724), and this repository.
