@@ -42,7 +42,8 @@ https://github.com/user-attachments/assets/8d1ddfe6-b401-4263-ac8c-0c2712ae731d
 
 ## ⚒️ TODO
 
-- [ ] Release code
+- [ ] Release the complete source code.
+- [x] Release evaluation and visualization code for HUMOTO and GRAB.
 - [x] Release paper
 
 ## Installation
