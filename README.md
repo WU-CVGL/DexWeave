@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/0b0d7ae9-a3de-4daf-8aad-cba62337e353
 
 ## News
 
-- **2026-10-20:** Released the HUMOTO and GRAB retargeted references: 2,070 sequences with matching evaluation NPZ files.
+- **2026-10-20:** Released the [HUMOTO and GRAB retargeted references](https://huggingface.co/datasets/naichuan04/DexWeave): 735 and 1,335 sequences, respectively, with matching evaluation NPZ files.
 - **2026-09-30:** Released the [project website](https://dexweave.github.io/), [paper](https://arxiv.org/abs/2609.34724), and this repository.
 
 ## Installation
@@ -54,8 +54,6 @@ python -m pip install -U huggingface_hub
 
 ## Data
 
-Download the retargeted motions and evaluation inputs from [Hugging Face](https://huggingface.co/datasets/naichuan04/DexWeave). Robot models are supplied under `resources/g1/`. Object meshes must be downloaded separately from their original providers; they are not distributed by this repository. Original human-motion files are not required. See [License](#license) for usage terms.
-
 | Dataset | Sequences | Frames at 50 Hz | opt / val files |
 | --- | ---: | ---: | ---: |
 | HUMOTO | 735 | 390,988 | 735 / 735 |
@@ -64,6 +62,9 @@ Download the retargeted motions and evaluation inputs from [Hugging Face](https:
 
 ### Download all NPZ files
 
+Download the retargeted motions and evaluation inputs from [Hugging Face](https://huggingface.co/datasets/naichuan04/DexWeave).
+
+
 ```bash
 hf download naichuan04/DexWeave --repo-type dataset --local-dir . \
   --include "data/*"
@@ -71,7 +72,7 @@ hf download naichuan04/DexWeave --repo-type dataset --local-dir . \
 
 The download is approximately 12.9 GB. For one dataset, replace `data/*` with `data/HUMOTO/*` or `data/GRAB/*`.
 
-Keep each `_opt.npz` motion file with its matching `_val.npz` evaluation file (`val` is not a dataset split). See the [Dataset Card](https://huggingface.co/datasets/naichuan04/DexWeave) for fields and coordinate conventions.
+Keep each `_opt.npz` motion file with its matching `_val.npz` evaluation file. See the [Dataset Card](https://huggingface.co/datasets/naichuan04/DexWeave) for fields and coordinate conventions.
 
 ### Object meshes
 
@@ -84,9 +85,7 @@ mkdir -p resources/objects/HUMOTO resources/objects/GRAB
 - **HUMOTO:** obtain the object resources through the [official dataset access page](https://github.com/adobe-research/humoto#accessing-the-full-dataset). From `humoto_objects_0805/`, copy each `<object>/<object>.obj` and its matching `.mtl` into `resources/objects/HUMOTO/`, keeping the object subdirectories. See the [official data layout](https://github.com/Jiaxin-Lu/humoto#dataset-structure).
 - **GRAB:** sign in to the [official download page](https://grab.is.tue.mpg.de/download.php) and obtain the object-mesh archive (`object_meshes.zip` in the official instructions). Copy its `contact_meshes/*.ply` files into `resources/objects/GRAB/`, including `table.ply`. Follow the [official mesh-access instructions](https://github.com/otaheri/GRAB#getting-started) if separate approval is required.
 
-Include every scene object referenced by the sequence, including tables and chairs. Keep the original filenames, geometry, local coordinates, and units. Scripts match the filenames in the NPZ `object_mesh_paths` field; no source human models or motion preprocessing is needed.
-
-`resources/objects/` is a local download directory excluded from Git uploads.
+Include every scene object referenced by the sequence. Keep the original filenames, geometry, local coordinates, and units. Scripts match the filenames in the NPZ `object_mesh_paths` field.
 
 ### Directory layout after downloads
 
@@ -97,9 +96,6 @@ DexWeave/
 │   ├── rerun_visualizer.py
 │   ├── evaluate.py
 │   └── motion_io.py
-├── assets/
-│   ├── dexweave-logo.svg
-│   └── teaser.webp
 ├── resources/
 │   ├── g1/
 │   │   ├── g1_rh56dfx.urdf
@@ -113,11 +109,11 @@ DexWeave/
     └── GRAB/<subject>/<sequence>/<sequence>_{opt,val}.npz
 ```
 
-Retain the GRAB subject directory, such as `s9/wineglass_pass_1`. Evaluation requires the MuJoCo XML, URDF, and meshes shown above.
+- Retain the GRAB subject directory, such as `s9/wineglass_pass_1`. Evaluation requires the MuJoCo XML, URDF, and meshes shown above.
 
-`assets/` contains page images only; scripts load all robot and object resources from `resources/`.
+- scripts load all robot and object resources from `resources/`.
 
-Sequences are discovered automatically under `data/`; a partial download evaluates only local sequences.
+- Sequences are discovered automatically under `data/` and a partial download evaluates only local sequences.
 
 ## Visualization
 
@@ -161,15 +157,13 @@ python scripts/evaluate.py --dataset GRAB --sequence s9/wineglass_pass_1 \
   --output evaluatioin_example
 ```
 
-`--jobs` sets the number of parallel processes (default: 1). Repeat `--sequence` to select multiple sequences from one `--dataset`. Results default to **`evaluatioin/`**.
-
 Resume an interrupted full run using the same output directory:
 
 ```bash
 python scripts/evaluate.py --jobs 8 --resume
 ```
 
-`--resume` reuses completed results. After changing inputs, models, or code, use a new output directory. Hand metrics come from the matching val file, which must be updated if the motion changes.
+`--resume` reuses completed results.
 
 ### Metrics
 
@@ -183,9 +177,6 @@ python scripts/evaluate.py --jobs 8 --resume
 | `footskating_duration` | ratio | Foot-skating frames / valid support frames |
 | `footskating_max_velocity_m_per_s` | m/s | Mean violating-frame speed, taking the faster foot per frame |
 
-Lower is better. Duration values are ratios from 0 to 1. Penetration thresholds are 1 cm for ground and self-collision, and 2 cm / 1 cm for HUMOTO / GRAB object collisions. Foot skating uses a horizontal-speed threshold of 0.30 m/s during valid saved support episodes.
-
-Hand errors average interaction frames per hand, then applicable hands. Dataset hand errors and duration ratios average applicable sequences; penetration depth and foot speed pool all violating frames.
 
 ## Output format
 
