@@ -224,9 +224,8 @@ If you find this useful, please consider citing:
 @article{sun2026dexweave,
   author  = {Sun, Naichuan and Shen, Haotian and Zhang, Yizhang and Feng, Luying and Wang, Haoze and Xiangli, Yuanbo and Jin, Yaochu and Liu, Peidong},
   title   = {DexWeave: Learning Dexterous Humanoid Loco-Manipulation from Human Demonstrations},
-  journal = {arXiv preprint arXiv:2609.34724},
+  journal = {arXiv},
   year    = {2026},
-  url     = {https://arxiv.org/abs/2609.34724}
 }
 ```
 
